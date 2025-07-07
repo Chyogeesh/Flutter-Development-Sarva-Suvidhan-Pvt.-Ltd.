@@ -57,3 +57,52 @@ Test on a physical device with biometric hardware for full functionality (emulat
 The code is responsive, reusing the previous assignment’s styles for consistency.
 For web apps, WebAuthn could be used (e.g., via SimpleWebAuthn), but this solution focuses on mobile due to CRED’s context and React Native’s mobile-first nature.
 Ensure the device has biometrics enabled (Settings > Touch ID/Face ID on iOS, or Security > Biometrics on Android).
+React Native Biometric Login App
+Description
+A React Native app with a login screen featuring email/password authentication and biometric login (fingerprint/face recognition), enhancing security and user experience, similar to apps like CRED.
+Requirements
+
+Node.js (v14 or higher)
+Expo CLI (npm install -g expo-cli)
+react-native-keychain (npm install react-native-keychain)
+expo-local-authentication (expo install expo-local-authentication)
+
+Setup Instructions
+
+Clone the repository or copy the code files.
+Navigate to the project directory.
+Run npm install to install dependencies.
+Run expo start to start the development server.
+Scan the QR code with the Expo Go app or use an emulator.
+
+Features
+
+Email/password login with validation
+Biometric authentication (fingerprint/face recognition)
+Secure storage of credentials using Keychain
+Show/hide password toggle
+Responsive design for iOS and Android
+Backend integration JSON configuration
+
+File Structure
+
+App.js: Main component with login UI and biometric logic
+biometricService.js: Biometric authentication utilities
+utils.js: Email validation utility
+backendConfig.json: Backend API configuration
+README.md: Project documentation
+
+Biometric Implementation
+
+Uses expo-local-authentication for fingerprint/face recognition.
+Checks device compatibility and enrollment on app start.
+Stores credentials securely with react-native-keychain.
+Prompts for biometric enrollment after manual login.
+Backend JSON includes a biometricToken field for server-side validation.
+
+Notes
+
+Biometric data is stored locally (iOS Secure Enclave, Android Keystore) for security.
+Update backendConfig.json with actual API endpoint for real integration.
+Test on physical devices with biometric hardware for full functionality.
+
